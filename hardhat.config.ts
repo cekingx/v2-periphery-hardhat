@@ -7,7 +7,7 @@ const {alchemyApiKey, privateKey, etherscanKey} = require('./secrets.json');
 const config: HardhatUserConfig = {
   networks: {
     testnet: {
-      url: `https://eth-rinkeby.alchemyapi.io/v2/${alchemyApiKey}`,
+      url: `https://eth-goerli.g.alchemy.com/v2/${alchemyApiKey}`,
       accounts: [privateKey]
     }
   },
@@ -29,7 +29,7 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: {
-      rinkeby: etherscanKey
+      goerli: etherscanKey
     }
   }
 };
