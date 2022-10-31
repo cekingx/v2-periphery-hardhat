@@ -3,7 +3,7 @@ import { ethers } from "hardhat";
 async function main() {
 
   const Router = await ethers.getContractFactory("UniswapV2Router02");
-  const router = await Router.deploy('0x119D28dE1C046aE6D1Ccd019048C5Afd3b80659D', '0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6');
+  const router = await Router.deploy('0x119D28dE1C046aE6D1Ccd019048C5Afd3b80659D', '0xA6FA4fB5f76172d178d61B04b0ecd319C5d1C0aa');
 
   await router.deployed();
 
