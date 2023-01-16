@@ -2,7 +2,7 @@ import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "@nomiclabs/hardhat-etherscan"
 
-const {alchemyApiKey, privateKey, etherscanKey, polygonAlchemyApiKey, polygonscanKey} = require('./secrets.json');
+const {alchemyApiKey, privateKey, etherscanKey, polygonscanKey, mumbaiAlchemyApiKey, maticAlchemyApiKey} = require('./secrets.json');
 
 const config: HardhatUserConfig = {
   networks: {
@@ -11,7 +11,11 @@ const config: HardhatUserConfig = {
       accounts: [privateKey]
     },
     mumbai: {
-      url: `https://polygon-mumbai.g.alchemy.com/v2/${polygonAlchemyApiKey}`,
+      url: `https://polygon-mumbai.g.alchemy.com/v2/${mumbaiAlchemyApiKey}`,
+      accounts: [privateKey]
+    },
+    matic: {
+      url: `https://polygon-mainnet.g.alchemy.com/v2/${maticAlchemyApiKey}`,
       accounts: [privateKey]
     }
   },
@@ -34,7 +38,8 @@ const config: HardhatUserConfig = {
   etherscan: {
     apiKey: {
       goerli: etherscanKey,
-      polygonMumbai: polygonscanKey
+      polygonMumbai: polygonscanKey,
+      polygon: polygonscanKey
     }
   }
 };
